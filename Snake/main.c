@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
+#include <stdbool.h>
 
+int direccion = 3;
 int tama=3;
 int snake [50][2];
 int t=1;
@@ -10,10 +12,11 @@ int x=10;
 int y=12;
 int coordx=30;
 int coordy=15;
-char boton;
+char boton = 0;
+int score = 0;
 int main()
 {
-    world_style();
+    Menuinicial();
     printf("\n");
     return 0;
 }
@@ -74,11 +77,12 @@ void comida()
         coordx=(rand()%73)+4;
         coordy=(rand()%19)+4;
         tama++;
-        record+=5;
+        score+=5;
 
         gotoxy(coordx,coordy);
         printf("%c", 235);
     }
+}
     void menuNiveles()
     {
 
@@ -94,14 +98,13 @@ void comida()
         printf(" \t| 2- Segundo nivel                           |\n");
         printf(" \t| 3- Menu inicial                            |\n");
         printf(" \t|____________________________________________|\n");
-        scanf("%c", &menu1);
         menu1=(getch());
         switch (menu1)
         {
         case '1':
             system("cls");
 //        jugar();
-
+        world_style();
             break;
 
         case '2':
@@ -124,10 +127,7 @@ void comida()
 
     int Menuinicial()
     {
-        char nombre[4000];
         char menu = '0';
-        while(boton!='3')
-        {
             printf(" \t|********************************************|\n");
             printf(" \t|                 JUEGO SNAKE                |\n");
             printf(" \t|                                            |\n");
@@ -137,8 +137,7 @@ void comida()
             printf(" \t| Presione 1 para jugar                      |\n");
             printf(" \t| Presione 3 para salir                      |\n");
             printf(" \t|____________________________________________|\n");
-            scanf("%c", &menu);
-
+            menu= getch();
             switch (menu)
             {
             case '1':
@@ -152,10 +151,73 @@ void comida()
             default:
                 system ("cls");
                 printf("Opcion no valida. Intentelo de nuevo.\n\n");
-                Menuprincipal();
+                Menuinicial();
                 break;
 
             }
-        }
+
 
     }
+
+    bool Perder()
+{
+    int j;
+    if (y==3 || y==23 ||x==2 ||x==77)
+    {
+        system("cls");
+
+        gotoxy(2,1);
+        printf (" Perdiste \n");
+
+        gotoxy(2,3);
+        printf(" Score : %d \n", score);
+        printf("\n \n");
+
+        if (score > 0)
+        {
+//            ficheros(score);
+            t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+//            Menuprincipal();
+            return false;
+        }
+        else
+        {
+            t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+
+//            Menuprincipal();
+            return false;
+        }
+    }
+
+    for (j=tama-1; j>0; j--)
+    {
+        if (snake[j][0]==x &&snake [j][1]==y)
+        {
+            system("cls");
+
+            gotoxy(2,1);
+            printf (" Perdiste \n");
+
+            gotoxy(2,3);
+            printf(" Score : %d \n", score);
+            printf("\n \n");
+
+            if (score > 0)
+            {
+//                ficheros(score);
+                t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+//                Menuprincipal();
+                return false;
+            }
+            else
+            {
+                t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+
+//                Menuprincipal();
+                return false;
+            }
+        }
+        return true;
+    }
+}
+

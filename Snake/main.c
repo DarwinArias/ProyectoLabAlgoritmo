@@ -8,7 +8,9 @@ int snake [50][2];
 int t=1;
 int x=10;
 int y=12;
-
+int coordx=30;
+int coordy=15;
+char boton;
 int main()
 {
     world_style();
@@ -65,46 +67,95 @@ void BorrarSnake()
     gotoxy(snake[t][0],snake[t][1]);
     printf(" ");
 }
-
-void menuMundos()
+void comida()
 {
-
-    char menu1 = '0';
-    printf(" \t|********************************************|\n");
-    printf(" \t|                                            |\n");
-    printf(" \t|                  NIVELES                   |\n");
-    printf(" \t|                                            |\n");
-    printf(" \t|  ****  ****  ****  ****  ****  ****  ****  |\n");
-    printf(" \t|***  ****  ****  ****  ****  ****  ****  ***|\n");
-    printf(" \t|                                            |\n");
-    printf(" \t| 1- Primer nivel                            |\n");
-    printf(" \t| 2- Segundo nivel                           |\n");
-    printf(" \t| 3- Menu inicial                            |\n");
-    printf(" \t|____________________________________________|\n");
-    scanf("%c", &menu1);
-    menu1=(getch());
-    switch (menu1)
+    if (x==coordx && y==coordy)
     {
-    case '1':
-        system("cls");
+        coordx=(rand()%73)+4;
+        coordy=(rand()%19)+4;
+        tama++;
+        record+=5;
+
+        gotoxy(coordx,coordy);
+        printf("%c", 235);
+    }
+    void menuNiveles()
+    {
+
+        char menu1 = '0';
+        printf(" \t|********************************************|\n");
+        printf(" \t|                                            |\n");
+        printf(" \t|                  NIVELES                   |\n");
+        printf(" \t|                                            |\n");
+        printf(" \t|  ****  ****  ****  ****  ****  ****  ****  |\n");
+        printf(" \t|***  ****  ****  ****  ****  ****  ****  ***|\n");
+        printf(" \t|                                            |\n");
+        printf(" \t| 1- Primer nivel                            |\n");
+        printf(" \t| 2- Segundo nivel                           |\n");
+        printf(" \t| 3- Menu inicial                            |\n");
+        printf(" \t|____________________________________________|\n");
+        scanf("%c", &menu1);
+        menu1=(getch());
+        switch (menu1)
+        {
+        case '1':
+            system("cls");
 //        jugar();
 
-        break;
+            break;
 
-    case '2':
-        system ("cls");
+        case '2':
+            system ("cls");
 //        jugar2();
-        break;
+            break;
 
-    case '3':
-        system("cls");
+        case '3':
+            system("cls");
 //        Menuinicial();
-        break;
-    default:
-        system ("cls");
-        printf("Opcion no valida. Inserte una opcion valida.\n\n");
-//        menuMundos();
-        break;
+            break;
+        default:
+            system ("cls");
+            printf("Opcion no valida. Inserte una opcion valida.\n\n");
+            menuNiveles();
+            break;
+        }
+
     }
 
-}
+    int Menuinicial()
+    {
+        char nombre[4000];
+        char menu = '0';
+        while(boton!='3')
+        {
+            printf(" \t|********************************************|\n");
+            printf(" \t|                 JUEGO SNAKE                |\n");
+            printf(" \t|                                            |\n");
+            printf(" \t|  ****  ****  ****  ****  ****  ****  ****  |\n");
+            printf(" \t|***  ****  ****  ****  ****  ****  ****  ***|\n");
+            printf(" \t|                                            |\n");
+            printf(" \t| Presione 1 para jugar                      |\n");
+            printf(" \t| Presione 3 para salir                      |\n");
+            printf(" \t|____________________________________________|\n");
+            scanf("%c", &menu);
+
+            switch (menu)
+            {
+            case '1':
+                system("cls");
+                menuNiveles();
+                break;
+
+            case '3':
+                return 0;
+                break;
+            default:
+                system ("cls");
+                printf("Opcion no valida. Intentelo de nuevo.\n\n");
+                Menuprincipal();
+                break;
+                */
+            }
+        }
+
+    }

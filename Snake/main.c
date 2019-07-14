@@ -31,53 +31,21 @@ void gotoxy (int x, int y)
 void world_style()
 {
     int i;
-    //Parte Superior Capa 1
-    for(i=0; i<=110; i++)
+    //Parte Vertical
+    for (i=2; i<78; i++)
     {
-        gotoxy (i,0);
-        printf("%c", 177);
+        gotoxy(i,3);
+        printf ("%c",177);
+        gotoxy(i,23);
+        printf ("%c",177);
     }
-    //Parte Izquierda Capa 1
-    for(i=0; i<=20; i++)
+    //Parte Horizontal
+    for (i=4; i<23; i++)
     {
-        gotoxy (0,i);
-        printf("%c", 177);
-    }
-    //Parte Derecha Capa 1
-    for(i=0; i<=20; i++)
-    {
-        gotoxy (110,i);
-        printf("%c", 177);
-    }
-    //Parte Abajo Capa 1
-    for(i=0; i<=110; i++)
-    {
-        gotoxy (i,20);
-        printf("%c", 177);
-    }
-    //Parte Superior Capa 2
-    for(i=0; i<=110; i++)
-    {
-        gotoxy (i,1);
-        printf("%c", 177);
-    }
-    //Parte Izquierda Capa 2
-    for(i=0; i<=20; i++)
-    {
-        gotoxy (1,i);
-        printf("%c", 177);
-    }
-    //Parte Derecha Capa 2
-    for(i=0; i<=20; i++)
-    {
-        gotoxy (109,i);
-        printf("%c", 177);
-    }
-    //Parte Abajo Capa 2
-    for(i=0; i<=110; i++)
-    {
-        gotoxy (i,19);
-        printf("%c", 177);
+        gotoxy(2,i);
+        printf ("%c",177);
+        gotoxy(77,i);
+        printf ("%c",177);
     }
     system("color f5");
 }
@@ -119,23 +87,23 @@ void menuMundos()
     {
     case '1':
         system("cls");
-        jugar();
+//        jugar();
 
         break;
 
     case '2':
         system ("cls");
-        jugar2();
+//        jugar2();
         break;
 
     case '3':
         system("cls");
-        Menuinicial();
+//        Menuinicial();
         break;
     default:
         system ("cls");
         printf("Opcion no valida. Inserte una opcion valida.\n\n");
-        menuMundos();
+//        menuMundos();
         break;
     }
 

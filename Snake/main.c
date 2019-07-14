@@ -6,6 +6,7 @@ int main()
 {
     menuMundos();
     printf("\n");
+    system("color f5");
     return 0;
 }
 void menuMundos()
@@ -47,7 +48,6 @@ void menuMundos()
             menuMundos();
             break;
     }
-    system("color f5");
 }
 void gotoxy (int x, int y)
 {
@@ -64,29 +64,21 @@ void gotoxy (int x, int y)
 void world_style()
 {
     int i;
-    //Parte Superior Capa 1
-    for(i=20; i<=110; i++)
+    //Parte Vertical
+    for (i=2; i<78; i++)
     {
-        gotoxy (i,3);
-        printf("%c", 177);
+        gotoxy(i,3);
+        printf ("%c",177);
+        gotoxy(i,23);
+        printf ("%c",177);
     }
-    //Parte Izquierda Capa 1
-    for(i=3; i<=20; i++)
+    //Parte Horizontal
+    for (i=4; i<23; i++)
     {
-        gotoxy (19,i);
-         printf("%c", 177);
-    }
-    //Parte Derecha Capa 1
-    for(i=3; i<=20; i++)
-    {
-        gotoxy (110,i);
-        printf("%c", 177);
-    }
-    //Parte Abajo Capa 1
-    for(i=20; i<=110; i++)
-    {
-        gotoxy (i,20);
-        printf("%c", 177);
+        gotoxy(2,i);
+        printf ("%c",177);
+        gotoxy(77,i);
+        printf ("%c",177);
     }
     system("color f5");
 }

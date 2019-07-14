@@ -2,16 +2,19 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
-
+#include <stdbool.h>
 int tama=3;
 int snake [50][2];
 int t=1;
 int x=10;
 int y=12;
-
+int score = 0;
+int direccion = 3;
+int coordx=30;
+int coordy=15;
 int main()
 {
-    world_style();
+    menuMundos();
     printf("\n");
     return 0;
 }
@@ -81,14 +84,13 @@ void menuMundos()
     printf(" \t| 2- Segundo nivel                           |\n");
     printf(" \t| 3- Menu inicial                            |\n");
     printf(" \t|____________________________________________|\n");
-    scanf("%c", &menu1);
     menu1=(getch());
     switch (menu1)
     {
     case '1':
         system("cls");
 //        jugar();
-
+        world_style();
         break;
 
     case '2':
@@ -107,4 +109,66 @@ void menuMundos()
         break;
     }
 
+}
+
+bool Perder()
+{
+    int j;
+    if (y==3 || y==23 ||x==2 ||x==77)
+    {
+        system("cls");
+
+        gotoxy(2,1);
+        printf (" Perdiste \n");
+
+        gotoxy(2,3);
+        printf(" Score : %d \n", score);
+        printf("\n \n");
+
+        if (score > 0)
+        {
+//            ficheros(score);
+            t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+//            Menuprincipal();
+            return false;
+        }
+        else
+        {
+            t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+
+//            Menuprincipal();
+            return false;
+        }
+    }
+
+    for (j=tama-1; j>0; j--)
+    {
+        if (snake[j][0]==x &&snake [j][1]==y)
+        {
+            system("cls");
+
+            gotoxy(2,1);
+            printf (" Perdiste \n");
+
+            gotoxy(2,3);
+            printf(" Score : %d \n", score);
+            printf("\n \n");
+
+            if (score > 0)
+            {
+//                ficheros(score);
+                t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+//                Menuprincipal();
+                return false;
+            }
+            else
+            {
+                t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+
+//                Menuprincipal();
+                return false;
+            }
+        }
+        return true;
+    }
 }

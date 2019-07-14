@@ -154,7 +154,7 @@ void comida()
                 printf("Opcion no valida. Intentelo de nuevo.\n\n");
                 Menuprincipal();
                 break;
-                */
+
             }
         }
 

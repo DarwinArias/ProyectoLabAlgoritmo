@@ -1,5 +1,7 @@
 # depslib dependency file v1.0
-1514140574 source:d:\programacion\proyectolabalgoritmo\snake\main.c
+1563115397 source:d:\programacion\proyectolabalgoritmo\snake\main.c
 	<stdio.h>
 	<stdlib.h>
+	<conio.h>
+	<windows.h>
 

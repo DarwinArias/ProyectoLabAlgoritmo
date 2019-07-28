@@ -87,20 +87,21 @@ void world_style_2()
         gotoxy(77,i);
         printf ("%c",177);
     }
+    // OBSTACULO 1.
     gotoxy(20,10);
     printf("%C", 177);
     gotoxy(21,10);
     printf("%C", 177);
     gotoxy(22,10);
     printf("%C", 177);
-
+    // OBSTACULO 2.
     gotoxy(70,18);
     printf("%C", 177);
     gotoxy(70,19);
     printf("%C", 177);
     gotoxy(70,20);
     printf("%C", 177);
-
+    // OBSTACULO 3.
     gotoxy(42,16);
     printf("%C", 177);
     gotoxy(42,17);

@@ -31,9 +31,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../Snake/Snake.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Snake/Snake.h" />
+		<Unit filename="../Snake/Snake_globales.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="minunit.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

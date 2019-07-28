@@ -12,6 +12,7 @@ void gotoxy (int x, int y);
 void DibujarSnake();
 void BorrarSnake();
 void archivo (int frecord);
+void palabra_snake();
 int Menuinicial();
 
 char *nombre;
@@ -28,6 +29,10 @@ int score = 0;
 
 int main()
 {
+    palabra_snake();
+    printf("\n\n");
+    system("PAUSE");
+    system("CLS");
     Menuinicial();
     printf("\n");
     return 0;
@@ -153,20 +158,6 @@ void comida()
     }
 }
 
-void comida_2()
-{
-    if (x==coordx && y==coordy)
-    {
-        coordx=(rand()%70)+4;
-        coordy=(rand()%25)+4;
-        tama++;
-        score+=5;
-
-        gotoxy(coordx,coordy);
-        printf("%c", 208);
-    }
-}
-
 void menuNiveles()
 {
     system("color f5");
@@ -210,18 +201,22 @@ void menuNiveles()
 void palabra_snake(){
 
     system("color f5");
-
-    printf("\t**********    *****        ***    *************    ***     ***    ************  \n");
-    printf("\t**********    ******       ***    *************    ***    ***     ************  \n");
-    printf("\t***           *** ***      ***    ****     ****    ***   ***      ***           \n");
-    printf("\t***           ***  ***     ***    ****     ****    ***  ***       ***           \n");
-    printf("\t**********    ***   ***    ***    *************    *******        ********      \n");
-    printf("\t**********    ***    ***   ***    *************    *******        ********      \n");
-    printf("\t       ***    ***     ***  ***    ****     ****    ***  ***       ***           \n");
-    printf("\t       ***    ***      *** ***    ****     ****    ***   ***      ***           \n");
-    printf("\t**********    ***       ******    ****     ****    ***    ***     ************  \n");
-    printf("\t**********    ***        *****    ****     ****    ****    ***    ************  \n");
-
+    printf("\n\n");
+    printf("\t|---------------------------------------------------------------------------------|\n");
+    printf("\t|                                                                                 |\n");
+    printf("\t| **********    *****        ***    *************    ***     ***    ************  |\n");
+    printf("\t| **********    ******       ***    *************    ***    ***     ************  |\n");
+    printf("\t| ***           *** ***      ***    ****     ****    ***   ***      ***           |\n");
+    printf("\t| ***           ***  ***     ***    ****     ****    ***  ***       ***           |\n");
+    printf("\t| **********    ***   ***    ***    *************    *******        ********      |\n");
+    printf("\t| **********    ***    ***   ***    *************    *******        ********      |\n");
+    printf("\t|        ***    ***     ***  ***    ****     ****    ***  ***       ***           |\n");
+    printf("\t|        ***    ***      *** ***    ****     ****    ***   ***      ***           |\n");
+    printf("\t| **********    ***       ******    ****     ****    ***    ***     ************  |\n");
+    printf("\t| **********    ***        *****    ****     ****    ****    ***    ************  |\n");
+    printf("\t|                                                                                 |\n");
+    printf("\t|                                                                                 |\n");
+    printf("\t|_________________________________________________________________________________|\n");
 }
 
 int Menuinicial()
@@ -466,10 +461,12 @@ bool Perder_2()
 
 void jugar()
 {
+   sndPlaySound("C:\\Users\\USUARIO\\Desktop\\ProyectoLabAlgoritmo",0);
+
     system("color f5");
     printf (" PRIMER MUNDO ");
     world_style();
-    gotoxy(coordx,coordy); //ubicala serpiente en esta posicion
+    gotoxy(coordx,coordy); //ubica la serpiente en esta posicion
     printf("%c", 5);
 
     while (Perder())
@@ -529,7 +526,7 @@ void jugar_2()
         BorrarSnake();
         Movimiento_Snake();
         DibujarSnake();
-        comida_2();
+        comida();
 
         if (kbhit())
         {

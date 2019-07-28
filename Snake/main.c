@@ -3,7 +3,17 @@
 #include <conio.h>
 #include <windows.h>
 #include <stdbool.h>
+char * leer(void);
+char buffer[500];
+void jugar();
+void world_style();
+void gotoxy (int x, int y);
+void DibujarSnake();
+void BorrarSnake();
+void archivo (int frecord);
+int Menuinicial();
 
+char *nombre;
 int direccion = 3;
 int tama=3;
 int snake [50][2];
@@ -14,6 +24,7 @@ int coordx=30;
 int coordy=15;
 char boton = 0;
 int score = 0;
+
 int main()
 {
     Menuinicial();
@@ -70,6 +81,16 @@ void BorrarSnake()
     gotoxy(snake[t][0],snake[t][1]);
     printf(" ");
 }
+
+void Movimiento_Snake()
+{
+    snake[t][0]=x;
+    snake[t][1]=y;
+    t++;
+    if (t==tama)
+        t=1;
+}
+
 void comida()
 {
     if (x==coordx && y==coordy)
@@ -80,7 +101,7 @@ void comida()
         score+=5;
 
         gotoxy(coordx,coordy);
-        printf("%c", 235);
+        printf("%c", 208);
     }
 }
     void menuNiveles()
@@ -103,8 +124,7 @@ void comida()
         {
         case '1':
             system("cls");
-//        jugar();
-        world_style();
+        jugar();
             break;
 
         case '2':
@@ -114,7 +134,7 @@ void comida()
 
         case '3':
             system("cls");
-//        Menuinicial();
+        Menuinicial();
             break;
         default:
             system ("cls");
@@ -128,6 +148,8 @@ void comida()
     int Menuinicial()
     {
         char menu = '0';
+        FILE * f;
+        char v;
             printf(" \t|********************************************|\n");
             printf(" \t|                 JUEGO SNAKE                |\n");
             printf(" \t|                                            |\n");
@@ -135,6 +157,7 @@ void comida()
             printf(" \t|***  ****  ****  ****  ****  ****  ****  ***|\n");
             printf(" \t|                                            |\n");
             printf(" \t| Presione 1 para jugar                      |\n");
+            printf(" \t| Presione 2 para ver los scores             |\n");
             printf(" \t| Presione 3 para salir                      |\n");
             printf(" \t|____________________________________________|\n");
             menu= getch();
@@ -144,6 +167,37 @@ void comida()
                 system("cls");
                 menuNiveles();
                 break;
+            case '2':
+
+              f = fopen("record.txt", "rt");
+
+
+         if (f==NULL) {
+         printf(" Error en la apertura. Es posible que el fichero no exista \n ");
+         printf("****************************\n");
+         printf("* Presione 'v' para volver *\n");
+         printf("****************************\n");
+
+         v=getch();
+         switch(v)
+         {
+         case 'v':
+            Menuinicial();
+            break;
+          }
+         }
+         else {
+        system("CLS");
+         printf("****************************\n");
+         printf("********** Scores **********\n");
+         printf("****************************\n");
+        fscanf (f,"%[^\n]",buffer);
+        printf ("%s \n\n",buffer);
+        system("PAUSE");
+        system("CLS");
+        Menuinicial();
+         }
+        break;
 
             case '3':
                 return 0;
@@ -155,7 +209,7 @@ void comida()
                 break;
 
             }
-
+        return -1;
 
     }
 
@@ -175,16 +229,18 @@ void comida()
 
         if (score > 0)
         {
-//            ficheros(score);
+            archivo(score);
             t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
-//            Menuprincipal();
+            system("CLS");
+            Menuinicial();
             return false;
         }
         else
         {
             t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
-
-//            Menuprincipal();
+            system("PAUSE");
+            system("CLS");
+            Menuinicial();
             return false;
         }
     }
@@ -204,20 +260,102 @@ void comida()
 
             if (score > 0)
             {
-//                ficheros(score);
+                archivo(score);
                 t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
-//                Menuprincipal();
+                Menuinicial();
                 return false;
             }
             else
             {
                 t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
-
-//                Menuprincipal();
+                system("PAUSE");
+                system("CLS");
+                Menuinicial();
                 return false;
             }
         }
         return true;
     }
+    return -1;
 }
 
+void jugar()
+{
+     system("color f5");
+     printf (" PRIMER MUNDO ");
+     world_style();
+     gotoxy(coordx,coordy); //ubicala serpiente en esta posicion
+     printf("%c", 5);
+
+    while (Perder())
+    {
+        BorrarSnake();
+        Movimiento_Snake();
+        DibujarSnake();
+        comida();
+
+       if (kbhit())
+        {
+            boton=getch();
+            switch (boton)
+            {
+            case 72: //arriba en ascii
+               if (direccion!=2) //no puede ser abajo
+                   direccion=1;
+            break;
+            case 80: // abajo en ascii
+               if (direccion!=1) //no puede ser arriba
+                   direccion=2;
+            break;
+            case 77: //derecha en ascii
+                if(direccion!=4)// no puede ser izquierda
+                   direccion=3;
+            break;
+            case 75: // izquierda en ascii
+               if (direccion!=3) //no puede ser derecha
+                   direccion=4;
+            break;
+            }
+        }
+    if (direccion==1)y--;
+    if (direccion==2)y++;
+    if (direccion==3)x++;
+    if (direccion==4)x--;
+
+
+
+    Sleep(100); //disminuye la velocidad con la que se imprime en la pantalla en un tiempo expresado en milisegundos
+    gotoxy(3,24);
+    printf("Score: %d",score);
+  }
+   system ("pause>null");
+}
+
+void archivo (int frecord) {
+
+      FILE *highscore;
+      highscore = fopen ("record.txt", "wt");
+      printf ("Escriba su nombre: ");
+      nombre = leer();
+      fprintf (highscore,"Jugador: %s | Record: %d",nombre,frecord);
+      fclose (highscore);
+
+}
+
+char * leer(void)
+{
+    char * arr;
+    char c;
+    arr =(char*)malloc(sizeof(char));
+    int i = 0;
+    *arr = '\0';
+    while ((c=getchar()) != '\n')
+    {
+        arr = (char*)realloc(arr,(i+2)*sizeof(char));
+        arr[i++]= c;
+        arr[i]= '\0';
+
+    }
+    return arr;
+
+}

@@ -155,11 +155,24 @@ void comida()
         coordy=(rand()%24)+4;
         tama++;
         score+=5;
-
+        if(coordx <= 2){
+            coordx=35;
+        }
+        if(coordx >= 77){
+            coordx=11;
+        }
+        if(coordy <= 4){
+            coordy=11;
+        }
+        if(coordy >= 22){
+            coordy=18;
+        }
         gotoxy(coordx,coordy);
         printf("%c", 208);
+
     }
 }
+
 
 void menuNiveles()
 {
@@ -297,10 +310,10 @@ int Menuinicial()
     return -1;
 
 }
-
 bool Perder()
 {
     int j;
+    int i;
     //CONDICIONES PARA PERDER CON LOS MARCOS.
     if (y==3 || y==23 ||x==2 ||x==77)
     {
@@ -330,10 +343,10 @@ bool Perder()
             return false;
         }
     }
-
+for(i = 0; i< tama; i++){
     for (j=tama-1; j>0; j--)
     {
-        if (snake[j][0]==x &&snake [j][1]==y)
+        if (snake[j][i]==x &&snake [j][i+1]==y)
         {
             system("cls");
 
@@ -348,6 +361,7 @@ bool Perder()
             {
                 archivo(score);
                 t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+                system("CLS");
                 Menuinicial();
                 return false;
             }
@@ -362,8 +376,10 @@ bool Perder()
         }
         return true;
     }
-    return -1;
 }
+return -1;
+}
+
 
 bool Perder_2()
 {
@@ -460,8 +476,9 @@ bool Perder_2()
             }
             return true;
         }
-        return -1;
+
     }
+     return -1;
 }
 
 void jugar()

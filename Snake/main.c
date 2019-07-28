@@ -288,14 +288,20 @@ int Menuinicial()
             printf("\t|          SCORES          |\n");
             printf("\t|                          |\n");
             printf("\t|__________________________|\n");
-            fscanf (f,"%[^\n]",buffer);
-            printf ("%s \n\n",buffer);
+            printf("\n\n");
+            int counter =0;
+             printf("\t|___________Top_10________|\n");
+             printf("\n\n");
+            while(fgets(buffer, 1024, (FILE*) f) && (counter <10)) {
+            printf ("\t%s",buffer);
+            counter++;
+            }
+            printf("\n\n");
             system("PAUSE");
             system("CLS");
             Menuinicial();
         }
         break;
-
     case '3':
         return 0;
         break;
@@ -343,7 +349,7 @@ bool Perder()
             return false;
         }
     }
-for(i = 0; i< tama; i++){
+for(i = 0; i< tama-1; i++){
     for (j=tama-1; j>0; j--)
     {
         if (snake[j][i]==x &&snake [j][i+1]==y)

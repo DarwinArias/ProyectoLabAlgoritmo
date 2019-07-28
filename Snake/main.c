@@ -383,6 +383,7 @@ return -1;
 
 bool Perder_2()
 {
+    int i;
     int j;
     //CONDICIONES PARA PERDER CON LOS MARCOS.
     if (y==3 || y==23 ||x==2 ||x==77)
@@ -444,41 +445,42 @@ bool Perder_2()
             return false;
 
         }
-
-        for (j=tama-1; j>0; j--)
+for(i = 0; i< tama; i++){
+    for (j=tama-1; j>0; j--)
+    {
+        if (snake[j][i]==x &&snake [j][i+1]==y)
         {
-            if (snake[j][0]==x &&snake [j][1]==y)
+            system("cls");
+
+            gotoxy(2,1);
+            printf (" Perdiste \n");
+
+            gotoxy(2,3);
+            printf(" Score : %d \n", score);
+            printf("\n \n");
+
+            if (score > 0)
             {
-                system("cls");
-
-                gotoxy(2,1);
-                printf (" Perdiste \n");
-
-                gotoxy(2,3);
-                printf(" Score : %d \n", score);
-                printf("\n \n");
-
-                if (score > 0)
-                {
-                    archivo(score);
-                    t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
-                    Menuinicial();
-                    return false;
-                }
-                else
-                {
-                    t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
-                    system("PAUSE");
-                    system("CLS");
-                    Menuinicial();
-                    return false;
-                }
+                archivo(score);
+                t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+                system("CLS");
+                Menuinicial();
+                return false;
             }
-            return true;
+            else
+            {
+                t=1,tama=3,x=10,y=12,direccion=3,coordx=30,coordy=15,score=0;
+                system("PAUSE");
+                system("CLS");
+                Menuinicial();
+                return false;
+            }
         }
-
+        return true;
     }
-     return -1;
+}
+}
+return -1;
 }
 
 void jugar()

@@ -169,7 +169,7 @@ void comida_2()
 
 void menuNiveles()
 {
-
+    system("color f5");
     char menu1 = '0';
     printf(" \t|********************************************|\n");
     printf(" \t|                                            |\n");
@@ -178,9 +178,9 @@ void menuNiveles()
     printf(" \t|  ****  ****  ****  ****  ****  ****  ****  |\n");
     printf(" \t|***  ****  ****  ****  ****  ****  ****  ***|\n");
     printf(" \t|                                            |\n");
-    printf(" \t| 1- Primer nivel                            |\n");
-    printf(" \t| 2- Segundo nivel                           |\n");
-    printf(" \t| 3- Menu inicial                            |\n");
+    printf(" \t| 1- Primer nivel.                           |\n");
+    printf(" \t| 2- Segundo nivel.                          |\n");
+    printf(" \t| 3- Menu inicial.                           |\n");
     printf(" \t|____________________________________________|\n");
     menu1=(getch());
     switch (menu1)
@@ -207,21 +207,39 @@ void menuNiveles()
     }
 
 }
+void palabra_snake(){
+
+    system("color f5");
+
+    printf("\t**********    *****        ***    *************    ***     ***    ************  \n");
+    printf("\t**********    ******       ***    *************    ***    ***     ************  \n");
+    printf("\t***           *** ***      ***    ****     ****    ***   ***      ***           \n");
+    printf("\t***           ***  ***     ***    ****     ****    ***  ***       ***           \n");
+    printf("\t**********    ***   ***    ***    *************    *******        ********      \n");
+    printf("\t**********    ***    ***   ***    *************    *******        ********      \n");
+    printf("\t       ***    ***     ***  ***    ****     ****    ***  ***       ***           \n");
+    printf("\t       ***    ***      *** ***    ****     ****    ***   ***      ***           \n");
+    printf("\t**********    ***       ******    ****     ****    ***    ***     ************  \n");
+    printf("\t**********    ***        *****    ****     ****    ****    ***    ************  \n");
+
+}
 
 int Menuinicial()
 {
+    system("color f5");
     char menu = '0';
     FILE * f;
     char v;
     printf(" \t|********************************************|\n");
+    printf(" \t|                                            |\n");
     printf(" \t|                 JUEGO SNAKE                |\n");
     printf(" \t|                                            |\n");
     printf(" \t|  ****  ****  ****  ****  ****  ****  ****  |\n");
     printf(" \t|***  ****  ****  ****  ****  ****  ****  ***|\n");
     printf(" \t|                                            |\n");
-    printf(" \t| Presione 1 para jugar                      |\n");
-    printf(" \t| Presione 2 para ver los scores             |\n");
-    printf(" \t| Presione 3 para salir                      |\n");
+    printf(" \t| Presione 1 para jugar.                     |\n");
+    printf(" \t| Presione 2 para ver los scores.            |\n");
+    printf(" \t| Presione 3 para salir.                     |\n");
     printf(" \t|____________________________________________|\n");
     menu= getch();
     switch (menu)
@@ -237,7 +255,7 @@ int Menuinicial()
 
         if (f==NULL)
         {
-            printf(" Error en la apertura. Es posible que el fichero no exista \n ");
+            printf(" Error en la apertura. Es posible que el fichero no exista. \n ");
             printf("****************************\n");
             printf("* Presione 'v' para volver *\n");
             printf("****************************\n");
@@ -253,9 +271,11 @@ int Menuinicial()
         else
         {
             system("CLS");
-            printf("****************************\n");
-            printf("********** Scores **********\n");
-            printf("****************************\n");
+            printf("\t|**************************|\n");
+            printf("\t|                          |\n");
+            printf("\t|          SCORES          |\n");
+            printf("\t|                          |\n");
+            printf("\t|__________________________|\n");
             fscanf (f,"%[^\n]",buffer);
             printf ("%s \n\n",buffer);
             system("PAUSE");

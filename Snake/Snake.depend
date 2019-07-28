@@ -6,7 +6,10 @@
 	<windows.h>
 	<stdbool.h>
 
-1563112412 source:c:\users\usuario\desktop\proyectolabalgoritmo\snake\main.c
+1564278428 source:c:\users\usuario\desktop\proyectolabalgoritmo\snake\main.c
 	<stdio.h>
 	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<stdbool.h>
 

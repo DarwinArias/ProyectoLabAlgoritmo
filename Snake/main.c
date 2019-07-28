@@ -3,6 +3,7 @@
 #include <conio.h>
 #include <windows.h>
 #include <stdbool.h>
+
 char * leer(void);
 char buffer[500];
 void jugar();
@@ -14,6 +15,7 @@ void BorrarSnake();
 void archivo (int frecord);
 void palabra_snake();
 int Menuinicial();
+
 
 char *nombre;
 int direccion = 3;
@@ -37,6 +39,7 @@ int main()
     printf("\n");
     return 0;
 }
+
 
 void gotoxy (int x, int y)
 {
@@ -198,7 +201,8 @@ void menuNiveles()
     }
 
 }
-void palabra_snake(){
+void palabra_snake()
+{
 
     system("color f5");
     printf("\n\n");
@@ -221,7 +225,7 @@ void palabra_snake(){
 
 int Menuinicial()
 {
-    system("color f5");
+    //system("color f5");
     char menu = '0';
     FILE * f;
     char v;
@@ -282,6 +286,7 @@ int Menuinicial()
     case '3':
         return 0;
         break;
+
     default:
         system ("cls");
         printf("Opcion no valida. Intentelo de nuevo.\n\n");
@@ -461,7 +466,8 @@ bool Perder_2()
 
 void jugar()
 {
-   sndPlaySound("C:\\Users\\USUARIO\\Desktop\\ProyectoLabAlgoritmo",0);
+
+    //sndPlaySoundA8("C:\\Users\\USUARIO\\Desktop\\ProyectoLabAlgoritmo",0);
 
     system("color f5");
     printf (" PRIMER MUNDO ");

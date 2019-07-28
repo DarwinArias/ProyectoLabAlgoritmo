@@ -3,17 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f60ffc89-d937-43ae-9185-46dbe33d0dd3" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/Killercats - Tell Me (feat. Alex Skrindo) [NCS Release].m4a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/minunit_Snake/minunit_Snake.layout" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/Snake.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake/Snake.depend" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.depend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/Snake.layout" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/bin/Debug/Snake.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/bin/Debug/Snake.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake/obj/Debug/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/obj/Debug/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/record.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minunit_Snake/minunit_Snake.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/minunit_Snake/minunit_Snake.cbp" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,14 +110,29 @@
       <option name="project" value="LOCAL" />
       <updated>1564284733851</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f60ffc89-d937-43ae-9185-46dbe33d0dd3" name="Default Changelist" comment="" />
+      <created>1564342520521</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1564342520521</updated>
+      <workItem from="1564342550179" duration="715000" />
+    </task>
+    <task id="LOCAL-00006" summary="Working...">
+      <created>1564342662857</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1564342662857</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3980000" />
+    <option name="totallyTimeSpent" value="4695000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -135,7 +145,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" visible="true" weight="0.32838038" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />

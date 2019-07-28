@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f60ffc89-d937-43ae-9185-46dbe33d0dd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ProyectoLabAlgoritmo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="f60ffc89-d937-43ae-9185-46dbe33d0dd3" name="Default Changelist" comment="Working...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/Snake.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/Snake.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake/Snake.depend" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.depend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/Snake.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/Snake.layout" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/Snake_globales.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/lib_finder.script" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/null" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/obj/Debug/Snake.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/bin/Debug/Snake.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/bin/Debug/Snake.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake/obj/Debug/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/obj/Debug/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/record.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minunit_Snake/main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minunit_Snake/minunit.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minunit_Snake/minunit_Snake.cbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/minunit_Snake/minunit_Snake.layout" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +131,28 @@
       <option name="project" value="LOCAL" />
       <updated>1564349159573</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Working...">
+      <created>1564352188672</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1564352188672</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Working...">
+      <created>1564352731701</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1564352731701</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Working...">
+      <created>1564352749465</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1564352749465</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

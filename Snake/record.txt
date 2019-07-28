@@ -1,2 +1,1 @@
-Jugador: Darwin | Record: 10
-Jugador: Enmanuel | Record: 15
+Jugador: Juan | Record: 5

@@ -12,10 +12,10 @@ void world_style();
 void gotoxy (int x, int y);
 void DibujarSnake();
 void BorrarSnake();
+
 void archivo (int frecord);
 void palabra_snake();
 int Menuinicial();
-
 
 char *nombre;
 int direccion = 3;

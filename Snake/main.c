@@ -6,6 +6,7 @@
 
 char * leer(void);
 char buffer[500];
+char buffer2[500];
 void jugar();
 void jugar_2();
 void world_style();
@@ -292,7 +293,7 @@ int Menuinicial()
             int counter =0;
              printf("\t|___________Top_10________|\n");
              printf("\n\n");
-            while(fgets(buffer, 1024, (FILE*) f) && (counter <10)) {
+             while(fgets(buffer, 1024, (FILE*) f) && (counter <10)) {
             printf ("\t%s",buffer);
             counter++;
             }
@@ -349,7 +350,7 @@ bool Perder()
             return false;
         }
     }
-for(i = 0; i< tama; i++){
+for(i = 0; i< tama-1; i++){
     for (j=tama-1; j>0; j--)
     {
         if (snake[j][i]==x &&snake [j][i+1]==y)
@@ -451,7 +452,7 @@ bool Perder_2()
             return false;
 
         }
-for(i = 0; i< tama; i++){
+for(i = 0; i< tama-1; i++){
     for (j=tama-1; j>0; j--)
     {
         if (snake[j][i]==x &&snake [j][i+1]==y)
@@ -601,13 +602,20 @@ void archivo (int frecord)
 {
 
     FILE *highscore;
-    highscore = fopen ("record.txt", "wt");
+    highscore = fopen ("record.txt", "a+");
+    if (highscore==NULL)
+        {
+            printf(" Error en la apertura. Es posible que el fichero no exista. \n ");
+        }
+        else
+        {
     printf ("Escriba su nombre: ");
     nombre = leer();
-    fprintf (highscore,"Jugador: %s | Record: %d",nombre,frecord);
+    fprintf (highscore,"Jugador: %s | Record: %d\n",nombre,frecord);
     fclose (highscore);
-
+    }
 }
+
 
 char * leer(void)
 {

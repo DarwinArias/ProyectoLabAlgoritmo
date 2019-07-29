@@ -36,10 +36,22 @@ void palabra_snake();
 int Menuinicial();
 
 coordenada head;
+
+
 coordenada cuerpo[50];
 coordenada food;
+
+
+
+
+
 int tama=3;
+
 int t=1;
+
+
+
+
 int score = 0;
 
 
@@ -393,7 +405,7 @@ void menuNiveles()
 
         system ("cls");
 
-        jugar_2();
+//        jugar_2();
 
         break;
 
@@ -470,6 +482,7 @@ void palabra_snake()
 int Menuinicial()
 
 {
+
 
     char buffer[500];
     //system("color f5");
@@ -562,9 +575,7 @@ int Menuinicial()
 
             system("CLS");
 
-            int counter =0;
-
-            printf("\t|--------------------------|\n");
+            printf("\t|**************************|\n");
 
             printf("\t|                          |\n");
 
@@ -574,7 +585,9 @@ int Menuinicial()
 
             printf("\t|__________________________|\n");
 
-            printf("\t|                          |\n");
+            printf("\n\n");
+
+            int counter =0;
 
             printf("\t|___________Top_10_________|\n");
 
@@ -695,12 +708,12 @@ bool Perder()
     }
 
 
-    for (j=tama-1; j>0&& tama<score; j--)
+    for (j=tama-1; j>0; j--)
 
     {
 
-//        if (cuerpo[j].x==head.x && cuerpo[j].y==head.y)
-        if(head.x==cuerpo[j].x && head.y==cuerpo[j-1].y)
+//        if (cuerpo[j].x==head.x &&cuerpo[j].y==head.y)
+        if(head.x==cuerpo[j].x && head.y==cuerpo[j].y)
 
         {
 
@@ -765,6 +778,8 @@ bool Perder()
     return -1;
 
 }
+
+
 
 
 bool Perder_2()
@@ -963,9 +978,13 @@ return -1;
 
 
 
+
+
 void jugar()
 
 {
+
+
 
     //sndPlaySoundA8("C:\\Users\\USUARIO\\Desktop\\ProyectoLabAlgoritmo",0);
 
@@ -994,6 +1013,8 @@ void jugar()
         DibujarSnake();
 
         comida();
+
+
 
         if (kbhit())
 
@@ -1052,6 +1073,10 @@ void jugar()
 
         if (head.direccion==4)
             head.x--;
+
+
+
+
 
 
 
@@ -1167,14 +1192,11 @@ void jugar_2()
 }
 
 
-
-
-
 void archivo (int frecord)
 
 {
 
-char *nombre;
+    char *nombre;
 
     FILE *highscore;
 

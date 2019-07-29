@@ -1,6 +1,0 @@
-Jugador: ssd | Record: 10
-Jugador: ft | Record: 10
-Jugador: sdhj | Record: 30
-Jugador: ojj | Record: 5
-Jugador: ok n | Record: 70
-Jugador: lk | Record: 55

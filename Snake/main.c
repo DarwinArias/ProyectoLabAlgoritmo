@@ -291,7 +291,7 @@ int Menuinicial()
             printf("\t|__________________________|\n");
             printf("\n\n");
             int counter =0;
-             printf("\t|___________Top_10___________|\n");
+             printf("\t|___________Top_10________|\n");
              printf("\n\n");
              while(fgets(buffer, 1024, (FILE*) f) && (counter <10)) {
             printf ("\t%s",buffer);

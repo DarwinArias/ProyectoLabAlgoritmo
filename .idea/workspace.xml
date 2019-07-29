@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f60ffc89-d937-43ae-9185-46dbe33d0dd3" name="Default Changelist" comment="Working...">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/Snake.depend" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.depend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/bin/Debug/Snake.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/bin/Debug/Snake.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/obj/Debug/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/obj/Debug/main.o" afterDir="false" />
+    <list default="true" id="f60ffc89-d937-43ae-9185-46dbe33d0dd3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Snake/Snake.layout" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.layout" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minunit_Snake/main.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minunit_Snake/minunit.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minunit_Snake/minunit_Snake.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minunit_Snake/minunit_Snake.layout" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,7 +31,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -46,12 +45,28 @@
             </path>
             <path>
               <item name="ProyectoLabAlgoritmo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="ProyectoLabAlgoritmo" type="462c0819:PsiDirectoryNode" />
+              <item name="Snake" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoLabAlgoritmo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoLabAlgoritmo" type="462c0819:PsiDirectoryNode" />
+              <item name="Snake" type="462c0819:PsiDirectoryNode" />
+              <item name="obj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoLabAlgoritmo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoLabAlgoritmo" type="462c0819:PsiDirectoryNode" />
+              <item name="Snake" type="462c0819:PsiDirectoryNode" />
+              <item name="obj" type="462c0819:PsiDirectoryNode" />
+              <item name="Debug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -152,16 +167,23 @@
       <option name="project" value="LOCAL" />
       <updated>1564352749465</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Working...">
+      <created>1564429148607</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1564429148607</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5472000" />
+    <option name="totallyTimeSpent" value="5798000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34333822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -172,11 +194,11 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" visible="true" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49853587" visible="true" weight="0.3268945" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Python Console" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50052685" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5014641" side_tool="true" visible="true" weight="0.3268945" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -197,11 +219,7 @@
         <state relative-caret-position="-459" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Snake/null">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Snake/lib_finder.script">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Snake/null" />
+    <entry file="file://$PROJECT_DIR$/Snake/lib_finder.script" />
   </component>
 </project>

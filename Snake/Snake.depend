@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1564427854 source:d:\programacion\proyectolabalgoritmo\snake\main.c
+1564439952 source:d:\programacion\proyectolabalgoritmo\snake\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
 	<windows.h>
+	<string.h>
 	<stdbool.h>
 
 1564353398 source:c:\users\usuario\desktop\proyectolabalgoritmo\snake\main.c

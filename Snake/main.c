@@ -5,6 +5,7 @@
 #include <conio.h>
 
 #include <windows.h>
+#include <string.h>
 
 #include <stdbool.h>
 
@@ -15,25 +16,25 @@ typedef struct
     int direccion;
 } coordenada;
 
+typedef struct{
+char buffer[500];
+char nombre[50];
+int score;
+}read;
+
 char * leer(void);
-
+void imprimir_scores();
 void jugar();
-
 void jugar_2();
-
 void world_style();
-
 void gotoxy (int x, int y);
-
 void DibujarSnake();
-
 void BorrarSnake();
-
 void archivo (int frecord);
-
 void palabra_snake();
-
+void ordenar_mundo_1();
 int Menuinicial();
+void ordenar_mundo_2();
 
 coordenada head;
 
@@ -52,7 +53,8 @@ int snake [50][2];
 
 int t=1;
 
-
+read linea[500];
+read scores[500];
 char boton = 0;
 
 int score = 0;
@@ -580,32 +582,38 @@ int Menuinicial()
 
             printf("\t|                          |\n");
 
-            printf("\t|          SCORES          |\n");
+            printf("\t|      SCORES MUNDO 1      |\n");
 
             printf("\t|                          |\n");
 
             printf("\t|__________________________|\n");
 
             printf("\n\n");
-
-            int counter =0;
-
             printf("\t|___________Top_10________|\n");
 
             printf("\n\n");
-
-            while(fgets(buffer, 1024, (FILE*) f) && (counter <10))
-            {
-
-                printf ("\t%s",buffer);
-
-                counter++;
-
-            }
-
+            ordenar_mundo_1();
             printf("\n\n");
 
             system("PAUSE");
+            system("CLS");
+
+            printf("\t|**************************|\n");
+
+            printf("\t|                          |\n");
+
+            printf("\t|      SCORES MUNDO 2      |\n");
+
+            printf("\t|                          |\n");
+
+            printf("\t|__________________________|\n");
+
+            printf("\n\n");
+            printf("\t|___________Top_10________|\n");
+
+            printf("\n\n");
+            ordenar_mundo_2();
+            printf("\n\n");
 
             system("CLS");
 
@@ -1215,8 +1223,10 @@ void archivo (int frecord)
 
 
     FILE *highscore;
+    FILE * nombres;
 
     highscore = fopen ("record.txt", "a+");
+    nombres = fopen ("nombres.txt", "a+");
 
     if (highscore==NULL)
 
@@ -1233,10 +1243,48 @@ void archivo (int frecord)
         printf ("Escriba su nombre: ");
 
         nombre = leer();
-
-        fprintf (highscore,"Jugador: %s | Record: %d\n",nombre,frecord);
+        fprintf (nombres,"%s\n",nombre);
+        fprintf (highscore,"%d\n",frecord);
 
         fclose (highscore);
+        fclose (nombres);
+
+    }
+
+}
+
+void archivo_2 (int frecord)
+
+{
+
+
+
+    FILE *highscore;
+    FILE * nombres;
+
+    highscore = fopen ("record_2.txt", "a+");
+    nombres = fopen ("nombres_2.txt", "a+");
+
+    if (highscore==NULL)
+
+    {
+
+        printf(" Error en la apertura. Es posible que el fichero no exista. \n ");
+
+    }
+
+    else
+
+    {
+
+        printf ("Escriba su nombre: ");
+
+        nombre = leer();
+        fprintf (nombres ,"%s\n",nombre);
+        fprintf (highscore,"%d\n",frecord);
+
+        fclose (highscore);
+        fclose (nombres);
 
     }
 
@@ -1278,3 +1326,85 @@ char * leer(void)
 
 
 }
+
+void ordenar_mundo_1(){
+FILE * f;
+FILE * f2;
+int i;
+int j;
+read temp;
+
+f=fopen("record.txt","r");
+f2=fopen("nombres.txt","r");
+for (i = 0; i < 50; i++){
+       fgets(linea[i].buffer, 1024, (FILE*) f);
+       linea[i].score = atoi(linea[i].buffer);
+       fgets(linea[i].buffer, 1024, (FILE*) f2);
+       strcpy(linea[i].nombre,linea[i].buffer);
+    }
+
+
+
+for (j=0;j<50;j++){
+    for(i=0;i<50;i++){
+        if(linea[i].score<linea[i+1].score){
+           temp = linea[i+1];
+           linea[i+1]=linea[i];
+           linea[i]=temp;
+           }
+    }
+}
+fclose(f);
+fclose(f2);
+
+imprimir_scores();
+}
+
+void imprimir_scores(){
+
+    int i;
+
+for(i=0 ;i<10; i++){
+    printf("\t%d-Nombre: %s", i+1 , linea[i].buffer);
+    printf("\tScore: %d",linea[i].score);
+    printf("\n");
+}
+
+}
+
+void ordenar_mundo_2(){
+FILE * f;
+FILE * f2;
+int i;
+int j;
+read temp;
+
+f=fopen("record_2.txt","r");
+f2=fopen("nombres_2.txt","r");
+for (i = 0; i < 50; i++){
+       fgets(linea[i].buffer, 1024, (FILE*) f);
+       linea[i].score = atoi(linea[i].buffer);
+       fgets(linea[i].buffer, 1024, (FILE*) f2);
+       strcpy(linea[i].nombre,linea[i].buffer);
+    }
+
+
+
+for (j=0;j<50;j++){
+    for(i=0;i<50;i++){
+        if(linea[i].score<linea[i+1].score){
+           temp = linea[i+1];
+           linea[i+1]=linea[i];
+           linea[i]=temp;
+           }
+    }
+}
+fclose(f);
+fclose(f2);
+
+imprimir_scores();
+}
+
+
+
+

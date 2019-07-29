@@ -1,2 +1,5 @@
-Jugador: jose | Record: 10
-Jugador: jola | Record: 5
+10
+20
+5
+45
+50

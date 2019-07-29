@@ -1,0 +1,3 @@
+Jugador: Darwin | Record: 40
+Jugador: Jen  | Record: 165
+Jugador: Archivo | Record: 25

@@ -11,3 +11,5 @@ kol
 Jose
 Juan
 forte
+polo
+TERO

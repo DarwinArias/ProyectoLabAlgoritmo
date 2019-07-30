@@ -5,9 +5,16 @@
 #include <string.h>
 #include <stdbool.h>
 #include "Snake.h"
-#include "Snake_globales.h"
 
 
+coordenada head;
+coordenada cuerpo[50];
+coordenada food;
+int tama=3;
+int t=1;
+read linea[500];
+read linea2[500];
+int scores= 0;
 void gotoxy (int x, int y)
 {
     HANDLE hCon;
@@ -119,7 +126,7 @@ void comida()
         food.x=(rand()%71)+4;
         food.y=(rand()%24)+4;
         tama++;
-        score+=5;
+        scores+=5;
         if(food.x <= 2)
         {
             food.x=35;
@@ -148,7 +155,7 @@ void comida_2()
         food.x=(rand()%71)+4;
         food.y=(rand()%24)+4;
         tama++;
-        score+=5;
+       scores+=5;
         if(food.x <= 2)
         {
             food.x=35;
@@ -368,17 +375,17 @@ bool Perder()
     //CONDICIONES PARA PERDER CON LOS MARCOS.
     if (head.y==3 || head.y==23 ||head.x==2 ||head.x==77)
     {
-        perdiste_1();
+       return true;
     }
     for (j=tama-1; j>0; j--)
     {
         if(head.x==cuerpo[j].x && head.y==cuerpo[j].y)
         {
-            perdiste_1();
+            return true;
         }
     }
 
-    return true;
+    return false;
 }
 void perdiste_1()
 {
@@ -386,18 +393,18 @@ void perdiste_1()
     gotoxy(2,1);
     printf (" Perdiste \n");
     gotoxy(2,3);
-    printf(" Score : %d \n", score);
+    printf(" Score : %d \n",scores);
     printf("\n \n");
-    if (score > 0)
+    if (scores > 0)
     {
-        archivo(score);
-        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
+        archivo(scores);
+        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,scores=0;
         system("CLS");
         Menuinicial();
     }
     else
     {
-        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
+        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,scores=0;
         system("PAUSE");
         system("CLS");
         Menuinicial();
@@ -409,22 +416,22 @@ bool Perder_2()
         //CONDICIONES PARA PERDER CON LOS MARCOS.
         if (head.y==3 || head.y==23 ||head.x==2 ||head.x==77)
         {
-           return false;
+           return true;
         }
 // CONDICIONES PARA PERDER CON LOS OBSTACULOS.
 
     else if( (head.x==20 && head.y==10) || (head.x==21 && head.y==10) || (head.x==22 && head.y==10) || (head.x==70 && head.y==18) || (head.x==70 && head.y==19) || (head.x==70 && head.y==20) || (head.x==42 && head.y==17) || (head.x==42 && head.y==17) || (head.x==41 && head.y==16) || (head.x==41 && head.y==17))
     {
-      return false;
+      return true;
     }
     for (j=tama-1; j>0; j--)
     {
         if (head.x==cuerpo[j].x && head.y==cuerpo[j].y)
         {
-         return false;
+         return true;
         }
     }
-    return true;
+    return false;
 }
 
 void perdiste_2()
@@ -433,18 +440,18 @@ void perdiste_2()
     gotoxy(2,1);
     printf (" Perdiste \n");
     gotoxy(2,3);
-    printf(" Score : %d \n", score);
+    printf(" Score : %d \n",scores);
     printf("\n \n");
-    if (score > 0)
+    if (scores > 0)
     {
-        archivo_2(score);
-        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
+        archivo_2(scores);
+        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,scores=0;
         system("CLS");
         Menuinicial();
     }
     else
     {
-        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
+        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,scores=0;
         system("PAUSE");
         system("CLS");
         Menuinicial();
@@ -452,15 +459,16 @@ void perdiste_2()
 }
 
 void jugar()
+
 {
-    //sndPlaySoundA8("C:\\Users\\USUARIO\\Desktop\\ProyectoLabAlgoritmo",0);
     char boton = 0;
     system("color f1");
-    printf (" \t\t\t\tPRIMER MUNDO ");
+    printf ("\t\t\t\tPRIMER MUNDO ");
     world_style();
-    gotoxy(food.x,food.y); //ubica la serpiente en esta posicion
+    gotoxy(food.x,food.y); //ubicala serpiente en esta posicion
     printf("%c", 208);
-    while (Perder())
+
+    while (!Perder())
     {
         BorrarSnake();
         Movimiento_Snake();
@@ -472,54 +480,43 @@ void jugar()
             switch (boton)
             {
             case 72: //arriba en ascii
-                if (head.direccion!=2)  //no puede ser abajo
-                {
+                if (head.direccion!=2) //no puede ser abajo
                     head.direccion=1;
-                }
                 break;
             case 80: // abajo en ascii
-                if (head.direccion!=1)  //no puede ser arriba
-                {
+                if (head.direccion!=1) //no puede ser arriba
                     head.direccion=2;
-                }
                 break;
             case 77: //derecha en ascii
-                if(head.direccion!=4) // no puede ser izquierda
-                {
+                if(head.direccion!=4)// no puede ser izquierda
                     head.direccion=3;
-                }
                 break;
-
             case 75: // izquierda en ascii
-                if (head.direccion!=3)  //no puede ser derecha
-                {
+                if (head.direccion!=3) //no puede ser derecha
                     head.direccion=4;
-                }
                 break;
             }
         }
         if (head.direccion==1)
-        {
             head.y--;
-        }
         if (head.direccion==2)
-        {
             head.y++;
-        }
         if (head.direccion==3)
-        {
             head.x++;
-        }
         if (head.direccion==4)
-        {
             head.x--;
-        }
         Sleep(100); //disminuye la velocidad con la que se imprime en la pantalla en un tiempo expresado en milisegundos
         gotoxy(3,24);
-        printf("Score: %d",score);
+        printf("Score: %d",scores);
     }
+    if (Perder_2()){
+       perdiste_1();
+    }
+
     system ("pause>null");
+
 }
+
 
 void jugar_2()
 
@@ -570,7 +567,7 @@ void jugar_2()
             head.x--;
         Sleep(100); //disminuye la velocidad con la que se imprime en la pantalla en un tiempo expresado en milisegundos
         gotoxy(3,24);
-        printf("Score: %d",score);
+        printf("Score: %d",scores);
     }
     if (Perder_2()){
        perdiste_2();

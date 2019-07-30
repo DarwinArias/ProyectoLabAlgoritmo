@@ -5,7 +5,6 @@
 #include <string.h>
 #include <stdbool.h>
 #include "Snake.h"
-#include "Snake_globales.h"
 
 int main()
 

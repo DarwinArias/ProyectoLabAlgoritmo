@@ -7,7 +7,7 @@
 	<string.h>
 	<stdbool.h>
 
-1564458208 source:c:\users\usuario\desktop\proyectolabalgoritmo\snake\main.c
+1564493275 source:c:\users\usuario\desktop\proyectolabalgoritmo\snake\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -15,13 +15,13 @@
 	<string.h>
 	<stdbool.h>
 	"Snake.h"
-	"Snake_globales.h"
 
-1564491666 c:\users\usuario\desktop\proyectolabalgoritmo\snake\snake.h
+1564493321 c:\users\usuario\desktop\proyectolabalgoritmo\snake\snake.h
 
-1564491666 c:\users\usuario\desktop\proyectolabalgoritmo\snake\snake_globales.h
+1564493110 c:\users\usuario\desktop\proyectolabalgoritmo\snake\snake_globales.h
+	"Snake.h"
 
-1564490611 source:c:\users\usuario\desktop\proyectolabalgoritmo\snake\snake.c
+1564493889 source:c:\users\usuario\desktop\proyectolabalgoritmo\snake\snake.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -29,5 +29,4 @@
 	<string.h>
 	<stdbool.h>
 	"Snake.h"
-	"Snake_globales.h"
 

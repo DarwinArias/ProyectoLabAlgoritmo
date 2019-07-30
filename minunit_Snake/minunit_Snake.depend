@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1564493889 source:c:\users\usuario\desktop\proyectolabalgoritmo\snake\snake.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<windows.h>
+	<string.h>
+	<stdbool.h>
+	"Snake.h"
+
+1564493321 c:\users\usuario\desktop\proyectolabalgoritmo\snake\snake.h
+
+1564491666 c:\users\usuario\desktop\proyectolabalgoritmo\snake\snake_globales.h
+
+1564494437 source:c:\users\usuario\desktop\proyectolabalgoritmo\minunit_snake\main.c
+	"minunit.h"
+	"../Snake/Snake.h"
+
+1564442357 c:\users\usuario\desktop\proyectolabalgoritmo\minunit_snake\minunit.h
+	<windows.h>
+	<unistd.h>
+	<time.h>
+	<sys/time.h>
+	<sys/resource.h>
+	<sys/times.h>
+	<string.h>
+	<mach/mach.h>
+	<mach/mach_time.h>
+	<stdio.h>
+	<math.h>
+

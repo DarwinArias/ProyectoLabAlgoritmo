@@ -14,6 +14,10 @@ typedef struct
     int puntaje;
 } read;
 
+coordenada head;
+coordenada cuerpo[50];
+coordenada food;
+
 void gotoxy (int x, int y);
 char * leer(void);
 void palabra_snake();

@@ -1,12 +1,8 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <conio.h>
-
 #include <windows.h>
 #include <string.h>
-
 #include <stdbool.h>
 
 typedef struct
@@ -532,71 +528,105 @@ int Menuinicial()
 
         {
 
-            system("CLS");
+            elegir_scores();
+            break;
 
-            printf("\t|**************************|\n");
+        case '3':
 
-            printf("\t|                          |\n");
+            return 0;
 
-            printf("\t|      SCORES MUNDO 1      |\n");
+            break;
 
-            printf("\t|                          |\n");
+        default:
 
-            printf("\t|__________________________|\n");
+            system ("cls");
 
-            printf("\n\n");
-            printf("\t|___________Top_10___________|\n");
-
-            printf("\n\n");
-            ordenar_mundo_1();
-            printf("\n\n");
-
-            system("PAUSE");
-            system("CLS");
-
-            printf("\t|**************************|\n");
-
-            printf("\t|                          |\n");
-
-            printf("\t|      SCORES MUNDO 2      |\n");
-
-            printf("\t|                          |\n");
-
-            printf("\t|__________________________|\n");
-
-            printf("\n\n");
-            printf("\t|___________Top_10___________|\n");
-
-            printf("\n\n");
-            ordenar_mundo_2();
-            printf("\n\n");
-
-            system("CLS");
+            printf("Opcion no valida. Intentelo de nuevo.\n\n");
 
             Menuinicial();
 
+            break;
         }
 
-        break;
+        return -1;
 
-    case '3':
+    }
+}
+void elegir_scores()
+{
+    int opcion;
+    printf("------Scores------\n\n");
+    printf("1 - Nivel 1\n");
+    printf("2 - Nivel 2\n");
+    printf("Elija:");
+    scanf("%d",&opcion);
 
-        return 0;
+        if(opcion== 1)
+    {
+        score_mundo_1();
+    }
+    else if(opcion== 2)
+    {
 
-        break;
+        score_mundo_2();
 
-    default:
-
-        system ("cls");
-
-        printf("Opcion no valida. Intentelo de nuevo.\n\n");
-
-        Menuinicial();
-
-        break;
     }
 
-    return -1;
+}
+void score_mundo_1()
+{
+
+
+
+    printf("\t|**************************|\n");
+
+    printf("\t|                          |\n");
+
+    printf("\t|      SCORES MUNDO 1      |\n");
+
+    printf("\t|                          |\n");
+
+    printf("\t|__________________________|\n");
+
+    printf("\n\n");
+    printf("\t|___________Top_10___________|\n");
+
+    printf("\n\n");
+    ordenar_mundo_1();
+    printf("\n\n");
+    system("PAUSE");
+    system("CLS");
+
+
+    Menuinicial();
+
+
+}
+void score_mundo_2()
+{
+
+
+    printf("\t|**************************|\n");
+
+    printf("\t|                          |\n");
+
+    printf("\t|      SCORES MUNDO 2      |\n");
+
+    printf("\t|                          |\n");
+
+    printf("\t|__________________________|\n");
+
+    printf("\n\n");
+    printf("\t|___________Top_10___________|\n");
+
+    printf("\n\n");
+    ordenar_mundo_2();
+    printf("\n\n");
+    system("PAUSE");
+
+    system("CLS");
+
+    Menuinicial();
 
 }
 
@@ -744,7 +774,7 @@ bool Perder_2()
 
         {
 
-            archivo(score);
+            archivo_2(score);
 
             t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
 
@@ -762,7 +792,6 @@ bool Perder_2()
         {
 
             t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-
 
             system("PAUSE");
 
@@ -798,7 +827,7 @@ bool Perder_2()
 
         {
 
-            archivo(score);
+            archivo_2(score);
 
             t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
 
@@ -849,7 +878,7 @@ bool Perder_2()
 
                 {
 
-                    archivo(score);
+                    archivo_2(score);
 
                     t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
 

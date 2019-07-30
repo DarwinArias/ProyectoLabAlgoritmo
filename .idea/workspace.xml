@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f60ffc89-d937-43ae-9185-46dbe33d0dd3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Snake/nombres_2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Snake/record_2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/Snake.depend" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.depend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/nombres.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/nombres.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/obj/Debug/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/obj/Debug/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/record.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,11 +172,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564443794964</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Working...">
+      <created>1564445446559</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1564445446559</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6118000" />
+    <option name="totallyTimeSpent" value="6784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />

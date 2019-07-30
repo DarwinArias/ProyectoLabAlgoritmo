@@ -8,3 +8,6 @@ tomas
 kos
 kol
 
+Jose
+Juan
+forte

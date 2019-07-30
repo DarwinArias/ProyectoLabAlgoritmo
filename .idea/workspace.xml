@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f60ffc89-d937-43ae-9185-46dbe33d0dd3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Snake/Snake.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Snake/Snake.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Snake/Snake_globales.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Snake/obj/Debug/Snake.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minunit_Snake/obj/Debug/Snake/Snake.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/Snake.depend" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.depend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/Snake.layout" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.layout" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/nombres.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/nombres.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/obj/Debug/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/obj/Debug/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/record.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +51,12 @@
               <item name="ProyectoLabAlgoritmo" type="462c0819:PsiDirectoryNode" />
               <item name="Snake" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ProyectoLabAlgoritmo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoLabAlgoritmo" type="462c0819:PsiDirectoryNode" />
+              <item name="Snake" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -49,6 +66,11 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USUARIO\Desktop\ProyectoLabAlgoritmo\Snake\obj" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -172,18 +194,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564443794964</updated>
     </task>
-    <task id="LOCAL-00015" summary="Working...">
-      <created>1564445446559</created>
+    <task id="LOCAL-00015" summary="Merge branch 'master' of https://github.com/DarwinArias/ProyectoLabAlgoritmo&#10;&#10;# Conflicts:&#10;#&#9;Snake/main.c&#10;#&#9;Snake/nombres.txt&#10;#&#9;Snake/nombres_2.txt&#10;#&#9;Snake/obj/Debug/main.o&#10;#&#9;Snake/record.txt">
+      <created>1564446206866</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1564445446559</updated>
+      <updated>1564446206866</updated>
     </task>
     <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6784000" />
+    <option name="totallyTimeSpent" value="6688000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -216,14 +238,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working..." />
+    <MESSAGE value="Merge branch 'master' of https://github.com/DarwinArias/ProyectoLabAlgoritmo&#10;&#10;# Conflicts:&#10;#&#9;Snake/main.c&#10;#&#9;Snake/nombres.txt&#10;#&#9;Snake/nombres_2.txt&#10;#&#9;Snake/obj/Debug/main.o&#10;#&#9;Snake/record.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/DarwinArias/ProyectoLabAlgoritmo&#10;&#10;# Conflicts:&#10;#&#9;Snake/main.c&#10;#&#9;Snake/nombres.txt&#10;#&#9;Snake/nombres_2.txt&#10;#&#9;Snake/obj/Debug/main.o&#10;#&#9;Snake/record.txt" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Snake/null" />
     <entry file="file://$PROJECT_DIR$/Snake/lib_finder.script" />
     <entry file="file://$PROJECT_DIR$/Snake/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23191" />
+        <state relative-caret-position="-360" />
       </provider>
     </entry>
   </component>

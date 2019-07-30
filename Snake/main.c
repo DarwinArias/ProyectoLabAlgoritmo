@@ -32,8 +32,10 @@ void palabra_snake();
 void ordenar_mundo_1();
 int Menuinicial();
 void ordenar_mundo_2();
-void archivo_2 (int frecord);
-void imprimir_scores2();
+void elegir_scores();
+void score_mundo_1();
+void score_mundo_2();
+void archivo_2(int frecord);
 
 coordenada head;
 coordenada cuerpo[50];
@@ -530,71 +532,110 @@ int Menuinicial()
 
         {
 
-            system("CLS");
+            elegir_scores();
+            break;
 
-            printf("\t|**************************|\n");
+        case '3':
 
-            printf("\t|                          |\n");
+            return 0;
 
-            printf("\t|      SCORES MUNDO 1      |\n");
+            break;
 
-            printf("\t|                          |\n");
+        default:
 
-            printf("\t|__________________________|\n");
+            system ("cls");
 
-            printf("\n\n");
-            printf("\t|___________Top_10___________|\n");
-
-            printf("\n\n");
-            ordenar_mundo_1();
-            printf("\n\n");
-
-            system("PAUSE");
-            system("CLS");
-
-            printf("\t|**************************|\n");
-
-            printf("\t|                          |\n");
-
-            printf("\t|      SCORES MUNDO 2      |\n");
-
-            printf("\t|                          |\n");
-
-            printf("\t|__________________________|\n");
-
-            printf("\n\n");
-            printf("\t|___________Top_10___________|\n");
-
-            printf("\n\n");
-            ordenar_mundo_2();
-            printf("\n\n");
-            system("PAUSE");
-            system("CLS");
+            printf("Opcion no valida. Intentelo de nuevo.\n\n");
 
             Menuinicial();
 
+            break;
         }
+    }
+    return -1;
+}
+void elegir_scores()
+{
+    char opcion = '0';
+    system("CLS");
+    printf("------Scores------\n\n");
+    printf("1 - Nivel 1\n");
+    printf("2 - Nivel 2\n");
+    printf("Elija:");
+    opcion = getch();
 
-        break;
+        if(opcion== '1')
+    {
+        system("CLS");
+        score_mundo_1();
+    }
+    else if(opcion== '2')
+    {
+        system("CLS");
+        score_mundo_2();
 
-    case '3':
-
-        return 0;
-
-        break;
-
-    default:
-
-        system ("cls");
-
-        printf("Opcion no valida. Intentelo de nuevo.\n\n");
-
-        Menuinicial();
-
-        break;
+    }else{
+     printf("\n\nDigita una opcion valida\n\n");
+     system("PAUSE");
+     system("CLS");
+     Menuinicial();
     }
 
-    return -1;
+}
+void score_mundo_1()
+{
+
+
+
+    printf("\t|**************************|\n");
+
+    printf("\t|                          |\n");
+
+    printf("\t|      SCORES MUNDO 1      |\n");
+
+    printf("\t|                          |\n");
+
+    printf("\t|__________________________|\n");
+
+    printf("\n\n");
+    printf("\t|___________Top_10___________|\n");
+
+    printf("\n\n");
+    ordenar_mundo_1();
+    printf("\n\n");
+    system("PAUSE");
+    system("CLS");
+
+
+    Menuinicial();
+
+
+}
+void score_mundo_2()
+{
+
+
+    printf("\t|**************************|\n");
+
+    printf("\t|                          |\n");
+
+    printf("\t|      SCORES MUNDO 2      |\n");
+
+    printf("\t|                          |\n");
+
+    printf("\t|__________________________|\n");
+
+    printf("\n\n");
+    printf("\t|___________Top_10___________|\n");
+
+    printf("\n\n");
+    ordenar_mundo_2();
+    printf("\n\n");
+    system("PAUSE");
+
+    system("CLS");
+
+    Menuinicial();
 
 }
 
@@ -714,7 +755,6 @@ bool Perder()
     return -1;
 
 }
-
 bool Perder_2()
 
 {
@@ -884,6 +924,7 @@ bool Perder_2()
 
 }
 
+
 void jugar()
 
 {
@@ -996,7 +1037,7 @@ void jugar_2()
 
     gotoxy(food.x,food.y); //ubicala serpiente en esta posicion
 
-    printf("%c", 208);
+    printf("%c", 5);
 
     while (Perder_2())
 
@@ -1015,22 +1056,25 @@ void jugar_2()
         {
 
             boton=getch();
+
             switch (boton)
+
             {
+
             case 72: //arriba en ascii
 
-                if (head.direccion!=2)  //no puede ser abajo
-                {
+                if (head.direccion!=2) //no puede ser abajo
+
                     head.direccion=1;
-                }
+
                 break;
 
             case 80: // abajo en ascii
 
-                if (head.direccion!=1)  //no puede ser arriba
-                {
+                if (head.direccion!=1) //no puede ser arriba
+
                     head.direccion=2;
-                }
+
                 break;
 
             case 77: //derecha en ascii
@@ -1242,7 +1286,6 @@ void imprimir_scores2()
     }
 
 }
-
 void ordenar_mundo_2()
 {
     FILE * f;
@@ -1278,7 +1321,3 @@ void ordenar_mundo_2()
 
     imprimir_scores2();
 }
-
-
-
-

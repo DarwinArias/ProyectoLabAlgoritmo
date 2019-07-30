@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f60ffc89-d937-43ae-9185-46dbe33d0dd3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake/Snake.depend" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/Snake.depend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/bin/Debug/Snake.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/bin/Debug/Snake.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/main.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake/nombres.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/nombres.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/nombres_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/nombres_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Snake/obj/Debug/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/obj/Debug/main.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Snake/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/record.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +18,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Snake/main.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,6 +54,10 @@
               <item name="ProyectoLabAlgoritmo" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProyectoLabAlgoritmo" type="462c0819:PsiDirectoryNode" />
               <item name="Snake" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProyectoLabAlgoritmo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -167,16 +184,23 @@
       <option name="project" value="LOCAL" />
       <updated>1564440683963</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Working...">
+      <created>1564443794964</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1564443794964</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5475000" />
+    <option name="totallyTimeSpent" value="6118000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34333822" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -211,7 +235,7 @@
     <entry file="file://$PROJECT_DIR$/Snake/lib_finder.script" />
     <entry file="file://$PROJECT_DIR$/Snake/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23191" />
+        <state relative-caret-position="-3" />
       </provider>
     </entry>
   </component>

@@ -420,7 +420,7 @@ bool Perder_2()
         }
 // CONDICIONES PARA PERDER CON LOS OBSTACULOS.
 
-    else if( (head.x==20 && head.y==10) || (head.x==21 && head.y==10) || (head.x==22 && head.y==10) || (head.x==70 && head.y==18) || (head.x==70 && head.y==19) || (head.x==70 && head.y==20) || (head.x==42 && head.y==17) || (head.x==42 && head.y==17) || (head.x==41 && head.y==16) || (head.x==41 && head.y==17))
+    else if( (head.x==20 && head.y==10) || (head.x==21 && head.y==10) || (head.x==22 && head.y==10) || (head.x==70 && head.y==18) || (head.x==70 && head.y==19) || (head.x==70 && head.y==20) || (head.x==42 && head.y==17) || (head.x==42 && head.y==16) || (head.x==41 && head.y==16) || (head.x==41 && head.y==17))
     {
       return true;
     }

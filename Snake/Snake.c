@@ -509,7 +509,7 @@ void jugar()
         gotoxy(3,24);
         printf("Score: %d",scores);
     }
-    if (Perder_2()){
+    if (Perder()){
        perdiste_1();
     }
 

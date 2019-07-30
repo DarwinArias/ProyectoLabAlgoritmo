@@ -38,6 +38,8 @@ void elegir_scores();
 void score_mundo_1();
 void score_mundo_2();
 void archivo_2(int frecord);
+void perdiste_1();
+void perdiste_2();
 
 coordenada head;
 coordenada cuerpo[50];
@@ -166,7 +168,8 @@ void Movimiento_Snake()
     cuerpo[t].x=head.x;
     cuerpo[t].y=head.y;
     t++;
-    if (t==tama){
+    if (t==tama)
+    {
         t=1;
     }
 }
@@ -226,7 +229,8 @@ void comida_2()
             food.y=18;
         }
         //Obstaculos
-        if( (food.x==20 && food.y==10) || (food.x==21 && food.y==10) || (food.x==22 && food.y==10) || (food.x==70 && food.y==18) || (food.x==70 && food.y==19) || (food.x==70 && food.y==20) || (food.x==42 && food.y==17) || (food.x==42 && food.y==17) || (food.x==41 && food.y==16) || (food.x==41 && food.y==17)){
+        if( (food.x==20 && food.y==10) || (food.x==21 && food.y==10) || (food.x==22 && food.y==10) || (food.x==70 && food.y==18) || (food.x==70 && food.y==19) || (food.x==70 && food.y==20) || (food.x==42 && food.y==17) || (food.x==42 && food.y==17) || (food.x==41 && food.y==16) || (food.x==41 && food.y==17))
+        {
             food.x = 5;
             food.y = 15;
         }
@@ -364,7 +368,7 @@ void elegir_scores()
     printf("Elija:");
     opcion = getch();
 
-        if(opcion== '1')
+    if(opcion== '1')
     {
         system("CLS");
         score_mundo_1();
@@ -374,11 +378,13 @@ void elegir_scores()
         system("CLS");
         score_mundo_2();
 
-    }else{
-     printf("\n\nDigita una opcion valida\n\n");
-     system("PAUSE");
-     system("CLS");
-     Menuinicial();
+    }
+    else
+    {
+        printf("\n\nDigita una opcion valida\n\n");
+        system("PAUSE");
+        system("CLS");
+        Menuinicial();
     }
 
 }
@@ -424,147 +430,87 @@ bool Perder()
     //CONDICIONES PARA PERDER CON LOS MARCOS.
     if (head.y==3 || head.y==23 ||head.x==2 ||head.x==77)
     {
-        system("cls");
-        gotoxy(2,1);
-        printf (" Perdiste \n");
-        gotoxy(2,3);
-        printf(" Score : %d \n", score);
-        printf("\n \n");
-        if (score > 0)
-        {
-            archivo(score);
-            t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-            system("CLS");
-            Menuinicial();
-            return false;
-        }
-        else
-        {
-            t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-            system("PAUSE");
-            system("CLS");
-            Menuinicial();
-            return false;
-        }
+        perdiste_1();
     }
     for (j=tama-1; j>0; j--)
     {
         if(head.x==cuerpo[j].x && head.y==cuerpo[j].y)
         {
-            system("cls");
-            gotoxy(2,1);
-            printf (" Perdiste \n");
-            gotoxy(2,3);
-            printf(" Score : %d \n", score);
-            printf("\n \n");
-            if (score > 0)
-            {
-                archivo(score);
-                t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-                system("CLS");
-                Menuinicial();
-                return false;
-            }
-            else
-            {
-                t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-                system("PAUSE");
-                system("CLS");
-                Menuinicial();
-                return false;
-            }
+            perdiste_1();
         }
-        return true;
     }
-    return -1;
-}
 
-bool Perder_2()
+    return true;
+}
+void perdiste_1()
 {
-    int j;
-    //CONDICIONES PARA PERDER CON LOS MARCOS.
-    if (head.y==3 || head.y==23 ||head.x==2 ||head.x==77)
+    system("cls");
+    gotoxy(2,1);
+    printf (" Perdiste \n");
+    gotoxy(2,3);
+    printf(" Score : %d \n", score);
+    printf("\n \n");
+    if (score > 0)
     {
-        system("cls");
-        gotoxy(2,1);
-        printf (" Perdiste \n");
-        gotoxy(2,3);
-        printf(" Score : %d \n", score);
-        printf("\n \n");
-        if (score > 0)
+        archivo(score);
+        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
+        system("CLS");
+        Menuinicial();
+    }
+    else
+    {
+        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
+        system("PAUSE");
+        system("CLS");
+        Menuinicial();
+    }
+}
+    bool Perder_2()
+    {
+        int j;
+        //CONDICIONES PARA PERDER CON LOS MARCOS.
+        if (head.y==3 || head.y==23 ||head.x==2 ||head.x==77)
         {
-            archivo_2(score);
-            t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-            system("CLS");
-            Menuinicial();
-            return false;
-        }
-        else
-        {
-            t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-            system("PAUSE");
-            system("CLS");
-            Menuinicial();
-            return false;
+            perdiste_2();
         }
 // CONDICIONES PARA PERDER CON LOS OBSTACULOS.
-    }
+
     else if( (head.x==20 && head.y==10) || (head.x==21 && head.y==10) || (head.x==22 && head.y==10) || (head.x==70 && head.y==18) || (head.x==70 && head.y==19) || (head.x==70 && head.y==20) || (head.x==42 && head.y==17) || (head.x==42 && head.y==17) || (head.x==41 && head.y==16) || (head.x==41 && head.y==17))
     {
-        system("cls");
-        gotoxy(2,1);
-        printf (" Perdiste \n");
-        gotoxy(2,3);
-        printf(" Score : %d \n", score);
-        printf("\n \n");
-        if (score > 0)
+        perdiste_2();
+    }
+    for (j=tama-1; j>0; j--)
+    {
+        if (head.x==cuerpo[j].x && head.y==cuerpo[j].y)
         {
-            archivo_2(score);
-            t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-            system("CLS");
-            Menuinicial();
-            return false;
-        }
-        else
-        {
-            t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-            system("PAUSE");
-            system("CLS");
-            Menuinicial();
-            return false;
-        }
-        for (j=tama-1; j>0; j--)
-        {
-            if (head.x==cuerpo[j].x && head.y==cuerpo[j].y)
-            {
-                system("cls");
-                gotoxy(2,1);
-                printf (" Perdiste \n");
-                gotoxy(2,3);
-                printf(" Score : %d \n", score);
-                printf("\n \n");
-                if (score > 0)
-                {
-                    archivo_2(score);
-                    t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-                    system("CLS");
-                    Menuinicial();
-                    return false;
-                }
-                else
-                {
-                    t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
-                    system("PAUSE");
-                    system("CLS");
-                    Menuinicial();
-                    return false;
-                }
-            }
-            return true;
+            perdiste_2();
         }
     }
-    return -1;
+    return true;
+}
 
+void perdiste_2()
+{
+    system("cls");
+    gotoxy(2,1);
+    printf (" Perdiste \n");
+    gotoxy(2,3);
+    printf(" Score : %d \n", score);
+    printf("\n \n");
+    if (score > 0)
+    {
+        archivo_2(score);
+        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
+        system("CLS");
+        Menuinicial();
+    }
+    else
+    {
+        t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
+        system("PAUSE");
+        system("CLS");
+        Menuinicial();
+    }
 }
 
 void jugar()
@@ -588,38 +534,46 @@ void jugar()
             switch (boton)
             {
             case 72: //arriba en ascii
-                if (head.direccion!=2){ //no puede ser abajo
+                if (head.direccion!=2)  //no puede ser abajo
+                {
                     head.direccion=1;
                 }
                 break;
             case 80: // abajo en ascii
-                if (head.direccion!=1){ //no puede ser arriba
+                if (head.direccion!=1)  //no puede ser arriba
+                {
                     head.direccion=2;
                 }
                 break;
             case 77: //derecha en ascii
-                if(head.direccion!=4){// no puede ser izquierda
+                if(head.direccion!=4) // no puede ser izquierda
+                {
                     head.direccion=3;
                 }
                 break;
 
             case 75: // izquierda en ascii
-                if (head.direccion!=3){ //no puede ser derecha
+                if (head.direccion!=3)  //no puede ser derecha
+                {
                     head.direccion=4;
                 }
                 break;
             }
         }
-        if (head.direccion==1){
+        if (head.direccion==1)
+        {
             head.y--;
         }
-        if (head.direccion==2){
+        if (head.direccion==2)
+        {
             head.y++;
         }
-        if (head.direccion==3){
+        if (head.direccion==3)
+        {
             head.x++;
         }
-        if (head.direccion==4){
+        if (head.direccion==4)
+        {
             head.x--;
         }
         Sleep(100); //disminuye la velocidad con la que se imprime en la pantalla en un tiempo expresado en milisegundos
@@ -649,39 +603,47 @@ void jugar_2()
             switch (boton)
             {
             case 72: //arriba en ascii
-                if (head.direccion!=2){ //no puede ser abajo
+                if (head.direccion!=2)  //no puede ser abajo
+                {
                     head.direccion=1;
                 }
                 break;
             case 80: // abajo en ascii
-                if (head.direccion!=1){ //no puede ser arriba
+                if (head.direccion!=1)  //no puede ser arriba
+                {
                     head.direccion=2;
                 }
                 break;
             case 77: //derecha en ascii
-                if(head.direccion!=4){// no puede ser izquierda
+                if(head.direccion!=4) // no puede ser izquierda
+                {
                     head.direccion=3;
                 }
                 break;
             case 75: // izquierda en ascii
-                if (head.direccion!=3){ //no puede ser derecha
+                if (head.direccion!=3)  //no puede ser derecha
+                {
                     head.direccion=4;
                 }
                 break;
             }
         }
-        if (head.direccion==1){
+        if (head.direccion==1)
+        {
             head.y--;
         }
-        if (head.direccion==2){
+        if (head.direccion==2)
+        {
             head.y++;
-    }
-        if (head.direccion==3){
+        }
+        if (head.direccion==3)
+        {
             head.x++;
-    }
-        if (head.direccion==4){
+        }
+        if (head.direccion==4)
+        {
             head.x--;
-    }
+        }
         Sleep(100); //disminuye la velocidad con la que se imprime en la pantalla en un tiempo expresado en milisegundos
         gotoxy(3,24);
         printf("Score: %d",score);

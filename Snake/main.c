@@ -1,12 +1,8 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <conio.h>
-
 #include <windows.h>
 #include <string.h>
-
 #include <stdbool.h>
 
 typedef struct
@@ -36,6 +32,8 @@ void palabra_snake();
 void ordenar_mundo_1();
 int Menuinicial();
 void ordenar_mundo_2();
+void archivo_2 (int frecord);
+void imprimir_scores2();
 
 coordenada head;
 coordenada cuerpo[50];
@@ -43,7 +41,7 @@ coordenada food;
 int tama=3;
 int t=1;
 read linea[500];
-read scores[500];
+read linea2[500];
 int score = 0;
 
 
@@ -570,7 +568,7 @@ int Menuinicial()
             printf("\n\n");
             ordenar_mundo_2();
             printf("\n\n");
-
+            system("PAUSE");
             system("CLS");
 
             Menuinicial();
@@ -720,11 +718,7 @@ bool Perder()
 bool Perder_2()
 
 {
-
-    int i;
-
     int j;
-
     //CONDICIONES PARA PERDER CON LOS MARCOS.
 
     if (head.y==3 || head.y==23 ||head.x==2 ||head.x==77)
@@ -744,7 +738,7 @@ bool Perder_2()
 
         {
 
-            archivo(score);
+            archivo_2(score);
 
             t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
 
@@ -798,7 +792,7 @@ bool Perder_2()
 
         {
 
-            archivo(score);
+            archivo_2(score);
 
             t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
 
@@ -849,7 +843,7 @@ bool Perder_2()
 
                 {
 
-                    archivo(score);
+                    archivo_2(score);
 
                     t=1,tama=3,head.x=10,head.y=12,head.direccion=3,food.x=30,food.y=15,score=0;
 
@@ -1002,7 +996,7 @@ void jugar_2()
 
     gotoxy(food.x,food.y); //ubicala serpiente en esta posicion
 
-    printf("%c", 5);
+    printf("%c", 208);
 
     while (Perder_2())
 
@@ -1021,25 +1015,22 @@ void jugar_2()
         {
 
             boton=getch();
-
             switch (boton)
-
             {
-
             case 72: //arriba en ascii
 
-                if (head.direccion!=2) //no puede ser abajo
-
+                if (head.direccion!=2)  //no puede ser abajo
+                {
                     head.direccion=1;
-
+                }
                 break;
 
             case 80: // abajo en ascii
 
-                if (head.direccion!=1) //no puede ser arriba
-
+                if (head.direccion!=1)  //no puede ser arriba
+                {
                     head.direccion=2;
-
+                }
                 break;
 
             case 77: //derecha en ascii
@@ -1238,6 +1229,19 @@ void imprimir_scores()
     }
 
 }
+void imprimir_scores2()
+{
+
+    int i;
+
+    for(i=0 ; i<10; i++)
+    {
+        printf("\t%d-Nombre: %s", i+1, linea2[i].buffer);
+        printf("\tScore: %d",linea2[i].score);
+        printf("\n");
+    }
+
+}
 
 void ordenar_mundo_2()
 {
@@ -1251,28 +1255,28 @@ void ordenar_mundo_2()
     f2=fopen("nombres_2.txt","r");
     for (i = 0; i < 50; i++)
     {
-        fgets(linea[i].buffer, 1024, (FILE*) f);
-        linea[i].score = atoi(linea[i].buffer);
-        fgets(linea[i].buffer, 1024, (FILE*) f2);
-        strcpy(linea[i].nombre,linea[i].buffer);
+        fgets(linea2[i].buffer, 1024, (FILE*) f);
+        linea2[i].score = atoi(linea2[i].buffer);
+        fgets(linea2[i].buffer, 1024, (FILE*) f2);
+        strcpy(linea2[i].nombre,linea2[i].buffer);
     }
 
     for (j=0; j<50; j++)
     {
         for(i=0; i<50; i++)
         {
-            if(linea[i].score<linea[i+1].score)
+            if(linea2[i].score<linea2[i+1].score)
             {
-                temp = linea[i+1];
-                linea[i+1]=linea[i];
-                linea[i]=temp;
+                temp = linea2[i+1];
+                linea2[i+1]=linea2[i];
+                linea2[i]=temp;
             }
         }
     }
     fclose(f);
     fclose(f2);
 
-    imprimir_scores();
+    imprimir_scores2();
 }
 
 

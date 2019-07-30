@@ -409,19 +409,19 @@ bool Perder_2()
         //CONDICIONES PARA PERDER CON LOS MARCOS.
         if (head.y==3 || head.y==23 ||head.x==2 ||head.x==77)
         {
-            perdiste_2();
+           return false;
         }
 // CONDICIONES PARA PERDER CON LOS OBSTACULOS.
 
     else if( (head.x==20 && head.y==10) || (head.x==21 && head.y==10) || (head.x==22 && head.y==10) || (head.x==70 && head.y==18) || (head.x==70 && head.y==19) || (head.x==70 && head.y==20) || (head.x==42 && head.y==17) || (head.x==42 && head.y==17) || (head.x==41 && head.y==16) || (head.x==41 && head.y==17))
     {
-        perdiste_2();
+      return false;
     }
     for (j=tama-1; j>0; j--)
     {
         if (head.x==cuerpo[j].x && head.y==cuerpo[j].y)
         {
-            perdiste_2();
+         return false;
         }
     }
     return true;
@@ -522,14 +522,16 @@ void jugar()
 }
 
 void jugar_2()
+
 {
     char boton = 0;
     system("color f1");
-    printf (" \t\t\t\tSEGUNDO MUNDO ");
+    printf ("\t\t\t\tSEGUNDO MUNDO ");
     world_style_2();
     gotoxy(food.x,food.y); //ubicala serpiente en esta posicion
     printf("%c", 208);
-    while (Perder_2())
+
+    while (!Perder_2())
     {
         BorrarSnake();
         Movimiento_Snake();
@@ -541,52 +543,41 @@ void jugar_2()
             switch (boton)
             {
             case 72: //arriba en ascii
-                if (head.direccion!=2)  //no puede ser abajo
-                {
+                if (head.direccion!=2) //no puede ser abajo
                     head.direccion=1;
-                }
                 break;
             case 80: // abajo en ascii
-                if (head.direccion!=1)  //no puede ser arriba
-                {
+                if (head.direccion!=1) //no puede ser arriba
                     head.direccion=2;
-                }
                 break;
             case 77: //derecha en ascii
-                if(head.direccion!=4) // no puede ser izquierda
-                {
+                if(head.direccion!=4)// no puede ser izquierda
                     head.direccion=3;
-                }
                 break;
             case 75: // izquierda en ascii
-                if (head.direccion!=3)  //no puede ser derecha
-                {
+                if (head.direccion!=3) //no puede ser derecha
                     head.direccion=4;
-                }
                 break;
             }
         }
         if (head.direccion==1)
-        {
             head.y--;
-        }
         if (head.direccion==2)
-        {
             head.y++;
-        }
         if (head.direccion==3)
-        {
             head.x++;
-        }
         if (head.direccion==4)
-        {
             head.x--;
-        }
         Sleep(100); //disminuye la velocidad con la que se imprime en la pantalla en un tiempo expresado en milisegundos
         gotoxy(3,24);
         printf("Score: %d",score);
     }
+    if (Perder_2()){
+       perdiste_2();
+    }
+
     system ("pause>null");
+
 }
 
 void archivo (int frecord)

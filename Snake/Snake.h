@@ -1,5 +1,5 @@
 #ifndef SNAKE_H
-#define SNAKE
+#define SNAKE_H
 typedef struct
 {
     int x;

@@ -1,5 +1,5 @@
 #ifndef SNAKE_GLOBALES_H
-#define SNAKE_GLOBALES
+#define SNAKE_GLOBALES_H
 coordenada head;
 coordenada cuerpo[50];
 coordenada food;
